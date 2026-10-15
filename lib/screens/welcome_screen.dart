@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/utils/constants.dart';
 
-import '../views/quiz_category.dart';
+import '../screens/quiz_category.dart';
 
 class WelcomeScreen extends StatelessWidget {
   TextEditingController userNameControler = TextEditingController();
