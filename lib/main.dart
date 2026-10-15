@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
 
 import 'utils/app_tema.dart';
+import 'utils/responsive.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      theme: AppTheme.light,
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(width: 120, height: 120, color: AppColors.primary),
-              const SizedBox(height: 16),
-              Container(
-                width: 120,
-                height: 40,
-                color: AppColors.primary.o(0.2),
-              ),
-              const SizedBox(height: 16),
-              const Text(
-                'Kuis Politika Indonesia',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-              ),
-              const Text(
-                'Uji pengetahuanmu mengenai sejarah, konstitusi, lembaga negara, dan demokrasi di Indonesia',
-                style: TextStyle(fontSize: 16),
-              ),
-            ],
-          ),
+  runApp(MaterialApp(theme: AppTheme.light, home: const DemoPage()));
+}
+
+class DemoPage extends StatelessWidget {
+  const DemoPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final r = context.r;
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Teks dari lebar layar',
+              style: TextStyle(fontSize: r.width * 0.06),
+            ),
+
+            Text(
+              'Teks dari sisi terpendek',
+              style: TextStyle(fontSize: r.font(6)),
+            ),
+
+            Container(
+              width: r.width * 0.5,
+              height: r.height * 0.2,
+              color: AppColors.primary,
+            ),
+            Text('${r.width.round()} x ${r.height.round()}'),
+            Text(r.isLandscape ? 'MENDATAR' : 'TEGAK'),
+          ],
         ),
       ),
-    ),
-  );
+    );
+  }
 }
