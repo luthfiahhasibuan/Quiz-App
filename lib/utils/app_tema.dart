@@ -1,4 +1,4 @@
-import 'package: flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class AppColors {
   AppColors._();
@@ -13,10 +13,10 @@ class AppColors {
   static const border = Color(0xFFDCE2F2);
   static const textDark = Color(0xFF1B2440);
   static const textMuted = Color(0xFF6B7491);
+}
 
-  extension ColorOpacityX on Color {
-  Color o(double opacity) =>
-      withAlpha((opacity.clamp(0.0, 1.0) * 255).round());
+extension ColorOpacityX on Color {
+  Color o(double opacity) => withAlpha((opacity.clamp(0.0, 1.0) * 255).round());
 }
 
 class AppTheme {
@@ -24,12 +24,34 @@ class AppTheme {
 
   static const fontFamily = 'Poppins';
 
+  static const List<BoxShadow> softShadow = [
+    BoxShadow(color: Color(0x1A2347A8), blurRadius: 16, offset: Offset(0, 6)),
+  ];
+
   static ThemeData get light {
+    final scheme = ColorScheme.fromSeed(
+      seedColor: AppColors.primary,
+      primary: AppColors.primary,
+      secondary: AppColors.accent,
+      surface: AppColors.surface,
+    );
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-      fontFamily: FontFamily,
-      scaffoldBackgroundColor: AppColors.background;
+      fontFamily: fontFamily,
+      scaffoldBackgroundColor: AppColors.background,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+        foregroundColor: AppColors.textDark,
+        elevation: 0,
+        centerTitle: true,
+        scrolledUnderElevation: 0,
+        titleTextStyle: TextStyle(
+          fontFamily: fontFamily,
+          fontWeight: FontWeight.w600,
+          color: AppColors.textDark,
+        ),
+      ),
     );
   }
 }
