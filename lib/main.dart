@@ -29,9 +29,13 @@ class DemoPage extends StatelessWidget {
             ),
 
             Container(
-              width: r.width * 0.5,
-              height: r.height * 0.2,
-              color: AppColors.primary,
+              width: r.sp(40),
+              height: r.sp(20),
+              margin: EdgeInsets.all(r.gap),
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(r.radius),
+              ),
             ),
             Text('${r.width.round()} x ${r.height.round()}'),
             Text(r.isLandscape ? 'MENDATAR' : 'TEGAK'),
