@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../utils/responsive.dart';
 import '../utils/app_tema.dart';
+import '../utils/app_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,6 +18,8 @@ class _SplashScreenState extends State<SplashScreen>
   late final AnimationController _controller;
   late final Animation<double> _fade;
   late final Animation<double> _scale;
+
+  Timer? _timer;
 
   @override
   void initState() {
@@ -30,14 +35,21 @@ class _SplashScreenState extends State<SplashScreen>
       end: 1,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.elasticOut));
     _controller.forward();
+
+    _timer = Timer(const Duration(milliseconds: 2400), () {
+      if (!mounted) return;
+      Navigator.pushReplacementNamed(context, AppRoutes.home);
+    });
   }
 
   @override
   void dispose() {
+    _timer?.cancel();
     _controller.dispose();
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final r = context.r;
     return Scaffold(
