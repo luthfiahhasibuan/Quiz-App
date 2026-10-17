@@ -6,7 +6,7 @@ import 'utils/app_routes.dart';
 import 'utils/app_tema.dart';
 
 void main() {
-  runApp(MaterialApp(theme: AppTheme.light, home: const SplashScreen()));
+  runApp(const KuisApp());
 }
 
 class KuisApp extends StatelessWidget {
@@ -21,7 +21,7 @@ class KuisApp extends StatelessWidget {
       initialRoute: AppRoutes.splash,
       routes: {
         AppRoutes.splash: (_) => const SplashScreen(),
-        AppRoutes.home: (_) => const HomeScreen(),
+        AppRoutes.home: (context) => const HomeScreen(),
       },
     );
   }

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart' show IconData, Icons;
 /// Kategori soal pada kuis.
 enum QuizCategory {
   sejarah('Sejarah Politik Indonesia', Icons.history_edu_rounded),
-  geografi('Pancasila Dan Konstitusi', Icons.public_rounded),
-  budaya('Hak Warga Negra', Icons.palette_rounded),
-  umum('Lembaga Negara', Icons.lightbulb_rounded);
+  pancasila('Pancasila Dan Konstitusi', Icons.public_rounded),
+  pemilu('Pemilu dan Dekomrasi', Icons.palette_rounded),
+  lembaga('Lembaga Negara', Icons.lightbulb_rounded);
 
   const QuizCategory(this.label, this.icon);
 
