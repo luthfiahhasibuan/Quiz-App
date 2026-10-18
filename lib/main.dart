@@ -5,7 +5,12 @@ import 'screens/splash_screen.dart';
 import 'utils/app_routes.dart';
 import 'utils/app_tema.dart';
 
+import 'package:provider/provider.dart';
+
+import '../providers/quiz_provider.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const KuisApp());
 }
 
@@ -14,15 +19,18 @@ class KuisApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Politika Indonesia',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-      initialRoute: AppRoutes.splash,
-      routes: {
-        AppRoutes.splash: (_) => const SplashScreen(),
-        AppRoutes.home: (context) => const HomeScreen(),
-      },
+    return ChangeNotifierProvider<QuizProvider>(
+      create: (_) => QuizProvider(),
+      child: MaterialApp(
+        title: 'Politika Indonesia',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.light,
+        initialRoute: AppRoutes.splash,
+        routes: {
+          AppRoutes.splash: (_) => const SplashScreen(),
+          AppRoutes.home: (context) => const HomeScreen(),
+        },
+      ),
     );
   }
 }
