@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../providers/quiz_provider.dart';
+import '../widgets/hero_banner.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
-    final quiz = context.watch<QuizProvider>();
-    return Scaffold(
-      body: Center(
+    return const Scaffold(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Soal: ${quiz.total}'),
-            Text('Terjawab: ${quiz.answeredCount}'),
-            Text('Sudah mulai: ${quiz.started}'),
-            ElevatedButton(
-              onPressed: () => context.read<QuizProvider>().startQuiz(),
-              child: const Text('Tes: mulai kuis'),
-            ),
-            ElevatedButton(
-              onPressed: () => context.read<QuizProvider>().selectAnswer(0),
-              child: const Text('Tes: jawab pilihan A'),
+            HeroBanner(
+              title: 'Politika Indonesia',
+              subtitle: 'Uji wawasanmu di sini',
             ),
           ],
         ),
