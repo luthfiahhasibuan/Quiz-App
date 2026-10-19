@@ -8,6 +8,7 @@ import '../utils/app_tema.dart';
 import '../utils/responsive.dart';
 import '../widgets/stat_card.dart';
 import '../widgets/hero_banner.dart';
+import '../widgets/category_chip.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -63,6 +64,37 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: AppColors.success,
                 ),
               ),
+            ],
+          ),
+
+          //kategori
+          SizedBox(height: r.gap * 1.5),
+          Text(
+            'Pilih Kategori',
+            style: TextStyle(
+              color: AppColors.textDark,
+              fontWeight: FontWeight.w700,
+              fontSize: r.font(4.6),
+            ),
+          ),
+          SizedBox(height: r.gap * 0.8),
+          Wrap(
+            spacing: r.gap * 0.6,
+            runSpacing: r.gap * 0.6,
+            children: [
+              CategoryChip(
+                label: 'Semua',
+                icon: Icons.apps_rounded,
+                selected: _selected == null,
+                onTap: () => setState(() => _selected = null),
+              ),
+              for (final c in QuizCategory.values)
+                CategoryChip(
+                  label: c.label,
+                  icon: c.icon,
+                  selected: _selected == c,
+                  onTap: () => setState(() => _selected = c),
+                ),
             ],
           ),
         ],
