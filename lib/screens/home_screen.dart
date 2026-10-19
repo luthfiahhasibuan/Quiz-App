@@ -9,6 +9,8 @@ import '../utils/responsive.dart';
 import '../widgets/stat_card.dart';
 import '../widgets/hero_banner.dart';
 import '../widgets/category_chip.dart';
+import '../utils/app_routes.dart';
+import '../widgets/primary_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,6 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
   int get _questionCount => _selected == null
       ? dummyQuestions.length
       : dummyQuestions.where((q) => q.category == _selected).length;
+
+  void _startNew() {
+    context.read<QuizProvider>().startQuiz(category: _selected);
+    Navigator.pushNamed(context, AppRoutes.quiz);
+  }
+
+  void _continue() => Navigator.pushNamed(context, AppRoutes.quiz);
 
   Widget _buildContent(Responsive r, QuizProvider quiz) {
     final inProgress = quiz.started && !quiz.finished;
@@ -97,6 +106,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
             ],
           ),
+
+          SizedBox(height: r.gap * 1.5),
+          if (inProgress) ...[
+            PrimaryButton(
+              label: 'Lanjutkan Kuis (${quiz.answeredCount}/${quiz.total})',
+              icon: Icons.play_arrow_rounded,
+              onPressed: _continue,
+            ),
+            SizedBox(height: r.gap * 0.7),
+            PrimaryButton(
+              label: 'Mulai Ulang',
+              icon: Icons.refresh_rounded,
+              outlined: true,
+              onPressed: _startNew,
+            ),
+          ] else
+            PrimaryButton(
+              label: 'Mulai Kuis',
+              icon: Icons.rocket_launch_rounded,
+              onPressed: _startNew,
+            ),
         ],
       ),
     );
