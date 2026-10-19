@@ -11,6 +11,7 @@ import '../widgets/hero_banner.dart';
 import '../widgets/category_chip.dart';
 import '../utils/app_routes.dart';
 import '../widgets/primary_button.dart';
+import '../widgets/info_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -127,6 +128,45 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icons.rocket_launch_rounded,
               onPressed: _startNew,
             ),
+
+          SizedBox(height: r.gap * 1.5),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(r.gap),
+            decoration: BoxDecoration(
+              color: AppColors.surface,
+              borderRadius: BorderRadius.circular(r.radius),
+              boxShadow: AppTheme.softShadow,
+            ),
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Cara Bermain',
+                  style: TextStyle(
+                    color: AppColors.textDark,
+                    fontWeight: FontWeight.w700,
+                    fontSize: r.font(4),
+                  ),
+                ),
+
+                SizedBox(height: r.gap * 0.7),
+                const InfoTile(
+                  icon: Icons.touch_app_rounded,
+                  text: 'Pilih satu jawaban untuk setiap soal.',
+                ),
+                const InfoTile(
+                  icon: Icons.lightbulb_rounded,
+                  text: 'Lihat penjelasan setelah menjawab.',
+                ),
+                const InfoTile(
+                  icon: Icons.save_rounded,
+                  text: 'Progres tersimpan walau layar diputar atau pindah halaman.',
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
