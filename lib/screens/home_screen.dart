@@ -178,8 +178,33 @@ class _HomeScreenState extends State<HomeScreen> {
     final quiz = context.watch<QuizProvider>();
     const banner = HeroBanner(
       title: 'Politika Indonesia',
-      subtitle: 'Uji wawasanmu di sini',
+      subtitle: 'Uji wawasan Politikmu',
     );
+
+    if (r.isLandscape) {
+      return Scaffold(
+        body: Row(
+          children: [
+            const Expanded(
+              flex: 4,
+              child: HeroBanner(
+                title: 'Politika Indonesia',
+                subtitle: 'Uji wawasan Politikmu',
+                expand: true,
+              ),
+            ),
+            Expanded(
+              flex: 6,
+              child: SafeArea(
+                left: false,
+                child: SingleChildScrollView(child: _buildContent(r, quiz)),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(children: [banner, _buildContent(r, quiz)]),
