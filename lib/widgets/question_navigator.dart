@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../utils/app_tema.dart';
 import '../utils/responsive.dart';
 
-/// Grid nomor soal untuk lompat antar soal (reusable).
-/// Hijau = sudah dijawab, biru = soal aktif, putih = belum dijawab.
 class QuestionNavigator extends StatelessWidget {
   const QuestionNavigator({
     super.key,
