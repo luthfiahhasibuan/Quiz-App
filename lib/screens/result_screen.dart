@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../providers/quiz_provider.dart';
 import '../utils/app_tema.dart';
 import '../utils/responsive.dart';
+import '../utils/app_routes.dart';
+import '../widgets/primary_button.dart';
+import '../widgets/stat_card.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -94,6 +98,64 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
+  Widget _stats(Responsive r, QuizProvider quiz) {
+    return Row(
+      children: [
+        Expanded(
+          child: StatCard(
+            icon: Icons.check_circle_rounded,
+            label: 'Benar',
+            value: '${quiz.correctCount}',
+            color: AppColors.success,
+          ),
+        ),
+        SizedBox(width: r.gap * 0.8),
+        Expanded(
+          child: StatCard(
+            icon: Icons.cancel_rounded,
+            label: 'Salah',
+            value: '${quiz.wrongCount}',
+            color: AppColors.error,
+          ),
+        ),
+        SizedBox(width: r.gap * 0.8),
+        Expanded(
+          child: StatCard(
+            icon: Icons.remove_circle_outline_rounded,
+            label: 'Kosong',
+            value: '${quiz.unansweredCount}',
+            color: AppColors.textMuted,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buttons(BuildContext context, Responsive r, QuizProvider quiz) {
+    return Column(
+      children: [
+        PrimaryButton(
+          label: 'Ulangi Kuis',
+          icon: Icons.replay_rounded,
+          onPressed: () {
+            quiz.startQuiz(category: quiz.filter);
+            Navigator.pushReplacementNamed(context, AppRoutes.quiz);
+          },
+        ),
+        SizedBox(height: r.gap * 0.7),
+        PrimaryButton(
+          label: 'Kembali ke Beranda',
+          icon: Icons.home_rounded,
+          outlined: true,
+          onPressed: () {
+            quiz.reset();
+            Navigator.popUntil(context, ModalRoute.withName(AppRoutes.home));
+          },
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final r = context.r;
@@ -114,7 +176,15 @@ class ResultScreen extends StatelessWidget {
         top: false,
         child: SingleChildScrollView(
           padding: EdgeInsets.all(r.pad),
-          child: _scoreCard(r, quiz),
+          child: Column(
+            children: [
+              _scoreCard(r, quiz),
+              SizedBox(height: r.gap),
+              _stats(r, quiz),
+              SizedBox(height: r.gap * 1.2),
+              _buttons(context, r, quiz),
+            ],
+          ),
         ),
       ),
     );
