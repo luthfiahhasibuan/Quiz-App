@@ -1,21 +1,34 @@
-<<<<<<< HEAD
-# quiz_app
+# Identity
 
-A new Flutter project.
+Nama : Luthfiah Amanda Putri
+NIM  : 231401125
+Lab  : 3
 
-## Getting Started
+# PolitikaIndonesia
 
-This project is a starting point for a Flutter application.
+Politika Indonesia adalah aplikasi kuis pilihan ganda berbasis mobile yang dirancang untuk menguji dan menambah wawasan pengguna mengenai dasar politik Indonesia. Aplikasi ini menyajikan berbagai pertanyaan seputar sejarah politik Indonesia, Pancasila dan konstitusi, pemilu dan demokrasi, serta lembaga negara.
 
-A few resources to get you started if this is your first Flutter project:
+Melalui tampilan antarmuka yang menarik dan interaktif, pengguna dapat menjawab pertanyaan, mengetahui kebenaran jawaban secara langsung, membaca penjelasan setelah menjawab soal, serta melihat hasil akhir kuis. Aplikasi ini diharapkan dapat menjadi sarana pembelajaran yang menyenangkan untuk meningkatkan pemahaman pengguna mengenai sistem politik dan ketatanegaraan Indonesia.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+# Fitur Aplikasi 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# Quiz-App
->>>>>>> e0082d8b8964512f0b5a64dcb1151ee42c2e7633
+## Splash Screen 
+
+Halaman pembuka yang menampilkan identitas aplikasi Politika Indonesia sebelum pengguna memasuki halaman utama. Splash screen ditampilkan selama 1,2 detik sebeleum berpindah ke halaman selanjutnya 
+
+## Home Page (Halaman Beranda)
+
+Halaman utama yang menjadi pusat navigasi aplikasi. Halaman ini menampilkan logo dan nama aplikasi, statistik kuis, pilihan kategori, tombol untuk memulai kuis, serta petunjuk cara bermain.
+
+## Halaman Kuis
+
+Halaman kuis menampilkan pertanyaan pilihan ganda beserta beberapa opsi jawaban yang dapat dipilih oleh pengguna. Fitur pada halaman ini meliputi:
+
+- Pilihan Jawaban
+- Umpan Balik Langsung
+- Penjelasan Jawaban
+- Indikator Progres
+- Navigasi Nomor Soal
+- Navigasi Soal
+
+
