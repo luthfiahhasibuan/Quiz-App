@@ -49,6 +49,8 @@ Halaman hasil ditampilkan setelah pengguna menyelesaikan seluruh pertanyaan. Hal
   - Fonts: Google Fonts
   - Image: Pinterest.com
  
+  ## Screenshot Halaman Aplikasi
+ 
 ![image alt](https://github.com/luthfiahhasibuan/Quiz-App/blob/2acb2c777f00e59b488558ef9fb678bd61ee9026/Pages.jpg)
 
 ### Mockup/Prototype
