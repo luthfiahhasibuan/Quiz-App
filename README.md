@@ -1,4 +1,4 @@
-## 👤 Identitas Mahasiswa
+## 👤 Identitas
 
 - Nama : Luthfiah Amanda Putri
 - NIM  : 231401125
@@ -48,6 +48,14 @@ Halaman hasil ditampilkan setelah pengguna menyelesaikan seluruh pertanyaan. Hal
 - UI/UX:
   - Fonts: Google Fonts
   - Image: Pinterest.com
+ 
+![image alt](https://github.com/luthfiahhasibuan/Quiz-App/blob/2acb2c777f00e59b488558ef9fb678bd61ee9026/Pages.jpg)
+
+### Mockup/Prototype
+
+https://www.figma.com/design/J0olhx7TJ7BefhsL15gUkc/Politika-Indonesia?node-id=0-1&t=lXcRwu4h7tEUoJHU-1
+
+### Video Presentasi 
  
 
  
