@@ -1,18 +1,18 @@
-# Identitas Mahasiswa
+## Identitas Mahasiswa
 
 - Nama : Luthfiah Amanda Putri
 - NIM  : 231401125
 - Lab  : 3
 
-# Informasi Aplikasi
+## Informasi Aplikasi
 
-## Politika Indonesia
+### Politika Indonesia
 
 Politika Indonesia adalah aplikasi kuis pilihan ganda berbasis mobile yang dirancang untuk menguji dan menambah wawasan pengguna mengenai dasar politik Indonesia. Aplikasi ini menyajikan berbagai pertanyaan seputar sejarah politik Indonesia, Pancasila dan konstitusi, pemilu dan demokrasi, serta lembaga negara.
 
 Melalui tampilan antarmuka yang menarik dan interaktif, pengguna dapat menjawab pertanyaan, mengetahui kebenaran jawaban secara langsung, membaca penjelasan setelah menjawab soal, serta melihat hasil akhir kuis. Aplikasi ini diharapkan dapat menjadi sarana pembelajaran yang menyenangkan untuk meningkatkan pemahaman pengguna mengenai sistem politik dan ketatanegaraan Indonesia.
 
-# Fitur Aplikasi 
+## Fitur Aplikasi 
 
 ### Splash Screen 
 
