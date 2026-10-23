@@ -58,6 +58,8 @@ Halaman hasil ditampilkan setelah pengguna menyelesaikan seluruh pertanyaan. Hal
 https://www.figma.com/design/J0olhx7TJ7BefhsL15gUkc/Politika-Indonesia?node-id=0-1&t=lXcRwu4h7tEUoJHU-1
 
 ### Video Presentasi 
+
+https://drive.google.com/file/d/1BLXp1jg7Xd-NtKpPErM4KcJFf0TkZBju/view?usp=drivesdkT
  
 
  
